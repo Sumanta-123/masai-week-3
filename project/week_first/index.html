@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Health Advisor</title>
+	<style type="text/css">
+		body{
+			background-color:black;
+			padding:0;
+			margin:0;
+		}
+		*{box-sizing: border-box;}
+		#navar{
+			width:1430px;
+			height:40px;
+			background:red;
+			float:left;
+		}	
+		nav{
+			width:240px;
+			height:40px;
+			border-right:10px ridge white;
+			float:left;
+			padding-top:10px;
+			padding-left:40px;
+			margin-left:46px;
+			font-family:sans-serif;
+			font-weight:bold;
+			font-size:20px;
+			color:white;
+		}
+		header{
+			width:1430px;
+			height:150px;
+			background:lightgreen;
+			float:left;
+			}
+			#input-field,#input-exercise{
+				width:250px;
+				height: 530px;
+				border:1px solid red;
+				float:left;
+				margin-left:20px;
+			}
+		#food,#exercise{
+			width:400px;
+			height:530px;
+			border:1px solid #ccc;
+			background-color:white;
+			float:left;
+			margin-left:20px;
+		}
+		.row{
+			width:400px;
+			height:57px;
+			border-bottom:1px solid #ccc;
+		}
+		.col-one{
+			width:190px;
+			height:57px;
+			padding-left:40px;
+			padding-top:10px;
+			border-left:1px solid #ccc;
+			float:left;
+			font-family:sans-serif;
+			font-weight:bold;
+		}
+		.col-two
+		{
+			width:190px;
+			height:57px;
+			padding-left:50px;
+			padding-top:10px;
+			border-left:1px solid #ccc;
+			float:left;
+			font-family:sans-serif;
+			font-weight:bold;
+		}
+		.input{
+			width:110px;
+			height:50px;
+			float:left;
+			margin-left:5px;
+			margin-top:20px;
+		}
+		#update,#fitness,#fat{
+			width:500px;
+			height:60px;
+			border:4px solid black;
+			background-color:blue;
+			margin-left:100px;
+			margin-top:10px;
+			font-size:30px;
+			color:white;
+			border:none;
+			float:left;
+			}
+			#fat{
+				margin-left:400px;
+			}
+			#notice{
+				width:600px;
+				height:170px;
+				border:1px solid green;
+				padding:50px;
+				padding-left:120px;
+				color:white;
+				font-size:30px;
+				position:absolute;
+				top:300px;
+				left:400px;
+				background:#ccc;
+				display:none;
+			}
+			#name{
+				width:500px;
+				height:40px;
+				border:none;
+				margin-left:400px;
+				padding-left:20px;
+			}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<div id="notice">You Should Try for diet</div>
+		<div id="navar">
+			<nav>Home</nav>
+			<nav>Foods</nav>
+			<nav>Exercise</nav>
+			<nav>About</nav>
+			<nav>Contact</nav>
+		</div>
+		<header>
+			<h1 style="font-family:sans-serif;margin-left:300px;margin-top:40px;">LET'S CHECK HEALTH ADVISOR!</h1>
+			<input type="text" name="name" id="name" placeholder="First put your name here">
+		</header>
+		<div id="input-field">
+			<h3 style="font-family:sans-serif;color:white;font-size:18px;text-align:center;font-weight:bold;">
+				Put Your foods
+			</h3>
+			<form>
+				<input type="text" class="input" name="first-name" id="input-first-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpStCalFod" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-second-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpNdCalFod" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-third-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpRdCalFod" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-four-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpFrCalFod" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-five-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpFvCalFod" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-six-food" placeholder="Food name" />
+				<input type="text" class="input" name="first-name" id="inpSxCalFod" placeholder="calaory" />
+			</form>
+			
+		</div>		
+		<div id="exercise">
+			<h1 style="font-family:sans-serif;color:red;font-size:18px;text-align:center;font-weight:bold;">Calories Gain By Foods</h1><hr/>
+			<div class="row">
+				<div class="col-one">Food Names</div>
+				<div class="col-two">Calories/Day</div>
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-one"></div>
+				<div class="col-two" id="cal-food-one"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-two"></div>
+				<div class="col-two" id="cal-food-two"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-three"></div>
+				<div class="col-two" id="cal-food-three"></div>
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-four"></div>
+				<div class="col-two" id="cal-food-four"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-five"></div>
+				<div class="col-two" id="cal-food-five"></div>
+			</div>
+			<div class="row">
+				<div class="col-one"  id="food-six"></div>
+				<div class="col-two" id="cal-food-six"></div>
+
+			</div>
+			
+			<div class="row">
+				<div class="col-one">Total :</div>
+				<div class="col-two" id="calory-total-food"></div>
+			</div>
+
+		</div>
+		<div id="input-exercise">
+			<h3 style="font-family:sans-serif;color:white;font-size:18px;text-align:center;font-weight:bold;">
+				Put Your Exercise
+			</h3>
+			<form>
+				<input type="text" class="input" name="first-name" id="input-first-exise" placeholder="Exercise one"/>
+				<input type="text" class="input" name="calory-first" id="inptStexise"  placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-second-exise" placeholder="Exercise two" />
+				<input type="text" class="input" name="first-name" id="inptNdexise"  placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-third-exise" placeholder="Exercise three" />
+				<input type="text" class="input" name="first-name" id="inptRdexise" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-four-exise" placeholder="Exercise four" />
+				<input type="text" class="input" name="first-name" id="inptFrexise" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-five-exise" placeholder="Exercise five" />
+				<input type="text" class="input" name="first-name" id="inptFvexise" placeholder="calaory" />
+				<input type="text" class="input" name="first-name" id="input-six-exise" placeholder="Exercise six" />
+				<input type="text" class="input" name="first-name" id="inptSxexise" placeholder="calaory" />
+			</form>
+		</div>		
+<!-- exercise coding of html goes from here !-->
+	<div id="food">
+			<h1 style="font-family:sans-serif;color:red;font-size:18px;text-align:center;font-weight:bold;">Calories Lose By Exercise</h1><hr/>
+			<div class="row">
+				<div class="col-one">Exercise Names</div>
+				<div class="col-two">Calories/Day</div>
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-one"></div>
+				<div class="col-two" id="cal-excise-one"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-two"></div>
+				<div class="col-two" id="cal-excise-two"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-three"></div>
+				<div class="col-two" id="cal-excise-three"></div>
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-four"></div>
+				<div class="col-two" id="cal-excise-four"></div>
+
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-five"></div>
+				<div class="col-two" id="cal-excise-five"></div>
+			</div>
+			<div class="row">
+				<div class="col-one" id="exer-six"></div>
+				<div class="col-two" id="cal-excise-six"></div>
+			</div>
+			
+				<div class="col-one">Total :</div>
+				<div class="col-two" id="calory-total-exe"></div>
+			</div>
+		</div>
+	<button onclick="add_food()" id="update">
+		Upadate Your Daily Routine
+	 </button>
+	<button onclick="Gain()" id="fitness">Check My Fitness</button>
+	</div>
+<script>
+	function add_food()
+	{
+		document.getElementById('food-one').innerHTML =document.getElementById('input-first-food').value;
+		var a = document.getElementById('cal-food-one').innerHTML =Number(document.getElementById('inpStCalFod').value);
+		// food two goes here
+		document.getElementById('food-two').innerHTML=document.getElementById('input-second-food').value;
+		var b = document.getElementById('cal-food-two').innerHTML=Number(document.getElementById('inpNdCalFod').value);
+		// third food goes here
+
+		document.getElementById('food-three').innerHTML=document.getElementById('input-third-food').value;
+		var c = document.getElementById('cal-food-three').innerHTML=Number(document.getElementById('inpRdCalFod').value);
+		// fourth food goes here 
+		document.getElementById('food-four').innerHTML=document.getElementById('input-four-food').value;
+		var d = document.getElementById('cal-food-four').innerHTML=Number(document.getElementById('inpFrCalFod').value);
+		// Fifth food goes here 
+		document.getElementById('food-five').innerHTML=document.getElementById('input-five-food').value;
+		var e = document.getElementById('cal-food-five').innerHTML=Number(document.getElementById('inpFvCalFod').value);
+		// Sixth food goes here 
+		document.getElementById('food-six').innerHTML=document.getElementById('input-six-food').value;
+		var f = document.getElementById('cal-food-six').innerHTML=Number(document.getElementById('inpSxCalFod').value);
+			var total = document.getElementById('calory-total-food');
+			var x = total.innerHTML =parseInt(a+b+c+d+e+f+e);
+// Food section coding ended here 
+// Exercise scripting coding goes from here 
+// 1st exercise goes here
+	document.getElementById('exer-one').innerHTML=document.getElementById('input-first-exise').value;
+	var n = document.getElementById('cal-excise-one').innerHTML=Number(document.getElementById('inptStexise').value);
+	// 2nd exercise goes here 
+
+document.getElementById('exer-two').innerHTML=document.getElementById('input-second-exise').value;
+	var o = document.getElementById('cal-excise-two').innerHTML=Number(document.getElementById('inptNdexise').value);
+//	third exercise goes here 
+	document.getElementById('exer-three').innerHTML=document.getElementById('input-third-exise').value;
+	var p = document.getElementById('cal-excise-three').innerHTML=Number(document.getElementById('inptRdexise').value);
+	// 4th exercise goes here 
+	document.getElementById('exer-four').innerHTML=document.getElementById('input-four-exise').value;
+	var q = document.getElementById('cal-excise-four').innerHTML=Number(document.getElementById('inptFrexise').value);
+	//5th exercise scripting codin goes here 
+	document.getElementById('exer-five').innerHTML=document.getElementById('input-five-exise').value;
+	var r = document.getElementById('cal-excise-five').innerHTML=Number(document.getElementById('inptFvexise').value);
+// 6th exercise scripting coding goes here
+document.getElementById('exer-six').innerHTML=document.getElementById('input-six-exise').value;
+	var s = document.getElementById('cal-excise-six').innerHTML=Number(document.getElementById('inptSxexise').value);
+
+	var exer_total_cal = document.getElementById('calory-total-exe');
+	 total.innerHTML =parseInt(a+b+c+d+e+f);
+	exer_total_cal.innerHTML = parseInt(n+o+p+q+r+s);
+
+	}
+	function Gain()
+	{
+		var user = document.getElementById('name').value;
+		var y = Number(document.getElementById('calory-total-food').innerHTML);
+		var x = Number(document.getElementById('calory-total-exe').innerHTML);
+		var sms = document.getElementById('notice');
+		var lose = (x-y);
+		var Gain = (y-x);
+		if (x>y) {
+			notice.style.display="block";
+			sms.textContent ="Hi"+user+"Very nice, please will you decrease your exercise little more"+Gain+"cal";
+			sms.style.color="green";
+		}
+		if (x<y) {
+			sms.textContent ="Hi "+" "+user+ "You Should need more Healthy food" +lose+" "+"cal";
+			notice.style.display="block";
+			notice.style.color="red";
+		}
+		if (x==y) {
+			sms.textContent ="Hi "+" "+user+ "You doesn't change anything" +lose+" "+"cal";
+			notice.style.display="block";
+			notice.style.color="red";
+		}
+	}
+</script>
+</body>
+</html>
